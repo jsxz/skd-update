@@ -25,10 +25,12 @@ def main(pattern):
     print(len(files42))
 
     for f in  sorted(files42):
-        print(f)
+        print('----' + f + ' start-----')
         r42= find_data(path42+'/'+f,pattern)
         r4=find_data(path4+'/'+f,pattern)
+        print('4.2数量:'+str(len(r42)))
         print(r42)
+        print('4.0数量:'+str(len(r4)))
         print(r4)
         add= set(r42).difference(set(r4))
         print('增加:'+ str(len(add)))
@@ -36,7 +38,7 @@ def main(pattern):
         remove=set(r4).difference(set(r42))
         print('删除:' + str(len(remove)))
         print(sorted(list(remove)))
-        print('-----')
+        print('----'+f+' end-----')
 
 if __name__=='__main__':
     print("元素开始")
